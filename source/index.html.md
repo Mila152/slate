@@ -73,8 +73,10 @@ curl -X GET https://node-rest-users.herokuapp.com/users | json_pp
 This endpoint retrieves all users.
 
 ### HTTP Request
-`GET /users HTTP/1.1
-Host: node-rest-users.herokuapp.com`
+<code>
+GET /users HTTP/1.1
+Host: node-rest-users.herokuapp.com
+</code>
 
 ## Create Single User
 ```json
@@ -108,7 +110,8 @@ curl --header "Content-Type: application/json" --request POST --data '{"fname":"
 This endpoint creates a single user.
 
 ### HTTP Request
-`POST /users/ HTTP/1.1
+<code>
+POST /users/ HTTP/1.1
 Host: node-rest-users.herokuapp.com
 Content-Type: application/json
 Content-Length: 74
@@ -118,8 +121,8 @@ Content-Length: 74
   "lname": "Something",
   "age": 5,
   "isvip": true
-}`
-
+}
+</code>
 
 ### Parameters
 
@@ -141,7 +144,7 @@ isvip | boolean | Indicator that shows whether the User is a VIP member or not.
 ```
 
 ```shell
-curl --header "Content-Type: application/json" --request PATCH --data '[{"propName":"fname","value":"Something"}]' --url 'https://node-rest-users.herokuapp.com/users/5e7f9750789e8a00178b4213' | json_pp
+curl --header "Content-Type: application/json" --request PATCH --data '[{"propName":"fname","value":"Something"}]' --url 'https://node-rest-users.herokuapp.com/users/<UserIdHere>' | json_pp
 ```
 
 > The above command returns JSON structured like this:
@@ -172,7 +175,8 @@ curl --header "Content-Type: application/json" --request PATCH --data '[{"propNa
 This endpoint edits a single user.
 
 ### HTTP Request
-`PATCH /users/5e7f9750789e8a00178b4213 HTTP/1.1
+<code>
+PATCH /users/&lt;UserIdHere&gt; HTTP/1.1
 Host: node-rest-users.herokuapp.com
 Content-Type: application/json
 Content-Length: 163
@@ -182,7 +186,10 @@ Content-Length: 163
   {"propName":"lname", "value":"Something"},
   {"propName":"age", "value":"19"},
   {"propName":"isvip", "value":"true"}
-]`
+]
+</code>
+
+<aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <code>5e7601fb8b107401997099f8</code></aside>
 
 ### Parameters
 
@@ -225,10 +232,12 @@ curl --request DELETE --url 'https://node-rest-users.herokuapp.com/users/<UserId
 This endpoint deletes single user's data.
 
 ### HTTP Request
-`DELETE /users/<UserIdHere> HTTP/1.1
-Host: node-rest-users.herokuapp.com`
+<code>
+DELETE /users/&lt;UserIdHere&gt; HTTP/1.1
+Host: node-rest-users.herokuapp.com
+</code>
 
-<aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <i>5e7601fb8b107401997099f8</i></aside>
+<aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <code>5e7601fb8b107401997099f8</code></aside>
 
 ## Get Single User
 ```json
@@ -262,4 +271,4 @@ GET /users/&lt;UserIdHere&gt; HTTP/1.1
 Host: node-rest-users.herokuapp.com
 </code>
 
-<aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <i>5e7601fb8b107401997099f8</i></aside>
+<aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <code>5e7601fb8b107401997099f8</code></aside>
