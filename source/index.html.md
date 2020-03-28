@@ -203,7 +203,9 @@ Content-Length: 163
 
 ```shell
 curl --header "Content-Type: application/json" 
-     --request PATCH --data '[{"propName":"fname","value":"Something"}]'      --url 'https://node-rest-users.herokuapp.com/users/<UserIdHere>' | json_pp
+     --request PATCH 
+     --data '[{"propName":"fname","value":"Something"}]'      
+     --url 'https://node-rest-users.herokuapp.com/users/<UserIdHere>' | json_pp
 ```
 
 > The above command returns JSON structured like this:
@@ -242,7 +244,7 @@ This endpoint edits a single user.
 
 Parameter | Description
 --------- | -----------
-propname| Any of the Parameters passed when creating the User.
+propname | Any of the <a href='#get-single-user'>Parameters</a> passed when creating the User.
 value | The new value that we want to assign to that parameter.
 
 ## Delete Single User
