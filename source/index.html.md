@@ -2,8 +2,8 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
   - json
+  - shell
 
 toc_footers:
   - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
@@ -23,19 +23,14 @@ You can view code examples in the dark area to the right, and you can switch the
 
 This example API documentation page was created with [Slate](https://github.com/slatedocs/slate).
 
-[comment]: <> (<aside class="notice">You must replace <code>meowmeowmeow</code> with your personal API key.</aside>)
-[comment]: <> (<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>)
-[comment]: <> (<aside class="success">Remember — a happy kitten is an authenticated kitten!</aside>)
-
 # Users
 
 ## Get All Users
+```json
+```
 
 ```shell
 curl -X GET https://node-rest-users.herokuapp.com/users | json_pp 
-```
-
-```json
 ```
 
 > The above command returns JSON structured like this:
@@ -82,10 +77,6 @@ This endpoint retrieves all users.
 Host: node-rest-users.herokuapp.com`
 
 ## Create Single User
-```shell
-curl --header "Content-Type: application/json" --request POST --data '{"fname":"John","lname":"Doe","age":"10","isvip":"true"}' --url 'https://node-rest-users.herokuapp.com/users/' | json_pp
-```
-
 ```json
 {
   "fname": "John",
@@ -93,6 +84,10 @@ curl --header "Content-Type: application/json" --request POST --data '{"fname":"
   "age": 5,
   "isvip": true
 }
+```
+
+```shell
+curl --header "Content-Type: application/json" --request POST --data '{"fname":"John","lname":"Doe","age":"10","isvip":"true"}' --url 'https://node-rest-users.herokuapp.com/users/' | json_pp
 ```
 
 > The above command returns JSON structured like this:
@@ -117,7 +112,7 @@ This endpoint creates a single user.
 Host: node-rest-users.herokuapp.com
 Content-Type: application/json
 Content-Length: 74
-
+&nbsp;
 {
   "fname": "Something",
   "lname": "Something",
@@ -136,10 +131,6 @@ age | integer | The User's age.
 isvip | boolean | Indicator that shows whether the User is a VIP member or not.
 
 ## Edit Single User
-```shell
-curl --header "Content-Type: application/json" --request PATCH --data '[{"propName":"fname","value":"Something"}]' --url 'https://node-rest-users.herokuapp.com/users/5e7f9750789e8a00178b4213' | json_pp
-```
-
 ```json
 [
   {"propName":"fname", "value":"Something"},
@@ -147,6 +138,10 @@ curl --header "Content-Type: application/json" --request PATCH --data '[{"propNa
   {"propName":"age", "value":"19"},
   {"propName":"isvip", "value":"true"}
 ]
+```
+
+```shell
+curl --header "Content-Type: application/json" --request PATCH --data '[{"propName":"fname","value":"Something"}]' --url 'https://node-rest-users.herokuapp.com/users/5e7f9750789e8a00178b4213' | json_pp
 ```
 
 > The above command returns JSON structured like this:
@@ -181,7 +176,7 @@ This endpoint edits a single user.
 Host: node-rest-users.herokuapp.com
 Content-Type: application/json
 Content-Length: 163
-
+&nbsp;
 [
   {"propName":"fname", "value":"Something"},
   {"propName":"lname", "value":"Something"},
@@ -197,11 +192,11 @@ propname| Any of the Parameters passed when creating the User.
 value | The new value that we want to assign to that parameter.
 
 ## Delete Single User
-```shell
-curl --request DELETE --url 'https://node-rest-users.herokuapp.com/users/<UserIdHere>' | json_pp
+```json
 ```
 
-```json
+```shell
+curl --request DELETE --url 'https://node-rest-users.herokuapp.com/users/<UserIdHere>' | json_pp
 ```
 
 > The above command returns JSON structured like this:
@@ -233,14 +228,14 @@ This endpoint deletes single user's data.
 `DELETE /users/<UserIdHere> HTTP/1.1
 Host: node-rest-users.herokuapp.com`
 
-<aside class="success">Remember: Change <UserIdHere> to the actual ID E. g. <i>5e7601fb8b107401997099f8</i></aside>
+<aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <i>5e7601fb8b107401997099f8</i></aside>
 
 ## Get Single User
-```shell
-curl -X GET https://node-rest-users.herokuapp.com/users/<UserIdHere> | json_pp
+```json
 ```
 
-```json
+```shell
+curl -X GET https://node-rest-users.herokuapp.com/users/<UserIdHere> | json_pp
 ```
 
 > The above command returns JSON structured like this:
@@ -265,4 +260,4 @@ This endpoint retrieves single user's data.
 `GET /users/<UserIdHere> HTTP/1.1
 Host: node-rest-users.herokuapp.com`
 
-<aside class="success">Remember: Change <UserIdHere> to the actual ID E. g. <i>5e7601fb8b107401997099f8</i></aside>
+<aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <i>5e7601fb8b107401997099f8</i></aside>
