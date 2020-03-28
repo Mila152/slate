@@ -73,10 +73,10 @@ curl -X GET https://node-rest-users.herokuapp.com/users | json_pp
 This endpoint retrieves all users.
 
 ### HTTP Request
-<code>
+<pre>
 GET /users HTTP/1.1
 Host: node-rest-users.herokuapp.com
-</code>
+</pre>
 
 ## Create Single User
 ```json
@@ -110,19 +110,19 @@ curl --header "Content-Type: application/json" --request POST --data '{"fname":"
 This endpoint creates a single user.
 
 ### HTTP Request
-<code>
+<pre>
 POST /users/ HTTP/1.1
 Host: node-rest-users.herokuapp.com
 Content-Type: application/json
 Content-Length: 74
-&nbsp;
+
 {
   "fname": "Something",
   "lname": "Something",
   "age": 5,
   "isvip": true
 }
-</code>
+</pre>
 
 ### Parameters
 
@@ -175,19 +175,19 @@ curl --header "Content-Type: application/json" --request PATCH --data '[{"propNa
 This endpoint edits a single user.
 
 ### HTTP Request
-<code>
+<pre>
 PATCH /users/&lt;UserIdHere&gt; HTTP/1.1
 Host: node-rest-users.herokuapp.com
 Content-Type: application/json
 Content-Length: 163
-&nbsp;
+
 [
   {"propName":"fname", "value":"Something"},
   {"propName":"lname", "value":"Something"},
   {"propName":"age", "value":"19"},
   {"propName":"isvip", "value":"true"}
 ]
-</code>
+</pre>
 
 <aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <code>5e7601fb8b107401997099f8</code></aside>
 
@@ -232,10 +232,10 @@ curl --request DELETE --url 'https://node-rest-users.herokuapp.com/users/<UserId
 This endpoint deletes single user's data.
 
 ### HTTP Request
-<code>
+<pre>
 DELETE /users/&lt;UserIdHere&gt; HTTP/1.1
 Host: node-rest-users.herokuapp.com
-</code>
+</pre>
 
 <aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <code>5e7601fb8b107401997099f8</code></aside>
 
@@ -266,9 +266,9 @@ curl -X GET https://node-rest-users.herokuapp.com/users/<UserIdHere> | json_pp
 This endpoint retrieves single user's data.
 
 ### HTTP Request
-<code>
+<pre>
 GET /users/&lt;UserIdHere&gt; HTTP/1.1
 Host: node-rest-users.herokuapp.com
-</code>
+</pre>
 
 <aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <code>5e7601fb8b107401997099f8</code></aside>
