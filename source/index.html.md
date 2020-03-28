@@ -257,7 +257,9 @@ curl -X GET https://node-rest-users.herokuapp.com/users/<UserIdHere> | json_pp
 This endpoint retrieves single user's data.
 
 ### HTTP Request
-`GET /users/<UserIdHere> HTTP/1.1
-Host: node-rest-users.herokuapp.com`
+<code>
+GET /users/&lt;UserIdHere&gt; HTTP/1.1
+Host: node-rest-users.herokuapp.com
+</code>
 
 <aside class="success">Remember: Change <code>&lt;UserIdHere&gt;</code> to the actual ID E. g. <i>5e7601fb8b107401997099f8</i></aside>
